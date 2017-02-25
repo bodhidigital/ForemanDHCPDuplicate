@@ -145,7 +145,7 @@ for ip, detail_lease in add_lease_on_secondary.items():
         post_response = lease_post_socket.read().decode("utf8")
 
     # Notify about addition
-    print("Added reservation for {0} ({1}):\n".format(ip, lease["hostname"]),
+    print("Added reservation for {0} ({1}):\n".format(ip, detail_lease["hostname"]),
           post_response,
           file=stderr)
 
