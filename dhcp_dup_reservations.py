@@ -138,7 +138,8 @@ for ip, detail_lease in add_lease_on_secondary.items():
     secondary_lease_url = dhcp_secondary_base_url
 
     # This does not belong
-    del detail_lease["subnet"]
+    if "subnet" in detail_lease:
+        del detail_lease["subnet"]
 
     # This does belong
     detail_lease["name"] = detail_lease["hostname"]
